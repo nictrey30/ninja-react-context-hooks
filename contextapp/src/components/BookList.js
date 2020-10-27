@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 
 class BookList extends Component {
+  // works only in class components
   static contextType = ThemeContext;
   render() {
     const { isLightTheme, light, dark } = this.context;
