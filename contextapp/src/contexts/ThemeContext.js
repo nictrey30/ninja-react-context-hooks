@@ -1,6 +1,6 @@
 import React, { createContext, Component } from 'react';
 
-export const ThemeContext = createContext();
+const ThemeContext = createContext();
 
 class ThemeContextProvider extends Component {
   state = {
@@ -33,4 +33,4 @@ class ThemeContextProvider extends Component {
   }
 }
 
-export default ThemeContextProvider;
+export { ThemeContext, ThemeContextProvider as default };
