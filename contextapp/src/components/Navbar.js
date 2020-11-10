@@ -9,7 +9,7 @@ class Navbar extends Component {
       // consumer can be also be used in functional components
       // we can consume this way multiple contexts with .Consumer
       <AuthContext.Consumer>
-        {(authContext) => {
+        {(authContext) => (
           <ThemeContext.Consumer>
             {(themeContext) => {
               const { isAuthenticated, toggleAuth } = authContext;
@@ -18,8 +18,8 @@ class Navbar extends Component {
               return (
                 <nav style={{ background: theme.ui, color: theme.syntax }}>
                   <h1>Context App</h1>
-                  <div onClick={toggleAuth}>
-                    {isAuthenticated ? 'Logged in' : 'Logged Out'}
+                  <div onClick={() => toggleAuth()}>
+                    {isAuthenticated ? 'Logged in' : 'Logged out'}
                   </div>
                   <ul>
                     <li>Home</li>
@@ -29,8 +29,8 @@ class Navbar extends Component {
                 </nav>
               );
             }}
-          </ThemeContext.Consumer>;
-        }}
+          </ThemeContext.Consumer>
+        )}
       </AuthContext.Consumer>
     );
   }
