@@ -22,7 +22,9 @@ import { ThemeContext } from '../contexts/ThemeContext';
 // }
 
 const BookList = () => {
-  const { isLightTheme, light, dark } = useContext(ThemeContext); // is going to provide the context object
+  // is going to provide the context object
+  const { isLightTheme, light, dark } = useContext(ThemeContext);
+  // we can use the useContext hook as many times as we want inside a functional component to consume as many different contexts as we want
   const theme = isLightTheme ? light : dark;
   return (
     <div
