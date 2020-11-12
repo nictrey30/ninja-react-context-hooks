@@ -14,10 +14,14 @@ const SongList = () => {
     setSongs([...songs, { title, id: uuidv4() }]);
   };
   useEffect(() => {
+    // when we want the useEffect to happen only on mount we pass an empty array to the hook
     // everything inside this arrow function is going to be executed every single time our App renders or updates if we don't pass the options-array
-    console.log('useEffect hook ran', songs);
+    console.log('useEffect hook ran when songs changed', songs);
     // console.log(`the age is now ${age}`);
-  });
+  }, [songs]);
+  useEffect(() => {
+    console.log('useEffect hook ran when age changed', age);
+  }, [age]);
   return (
     <div className='song-list'>
       <ul>
