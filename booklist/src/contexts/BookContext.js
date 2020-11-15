@@ -19,6 +19,7 @@ const BookContextProvider = (props) => {
   };
   return (
     <BookContext.Provider value={{ books, addBook, removeBook }}>
+      {/* props.children represents the components that BookContextProvider is going to wrap */}
       {props.children}
     </BookContext.Provider>
   );
